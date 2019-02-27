@@ -1,5 +1,9 @@
 # Real-time Glasses Detection
 
+<p align="center">
+    <img src="./results/example_1.gif">
+</p>
+
 ## Introduction
 This is an light-weight glasses detector written in Python for real-time videos. The algorithm is based on the method presented by the paper in [*Reference*](#Reference) with some modifications. Note that the goal is to determine the presence but not the precise location of glasses.
 
