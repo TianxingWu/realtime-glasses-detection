@@ -14,7 +14,7 @@ This is an light-weight glasses detector written in Python for real-time videos.
 - dlib 19.7.0
 
 ## What's Next
-The threshold used for determining the presence of glasses is manually chosen based on experiment results at present. My next goal is to develop an algorithm that can choose the threshold automatically in order to enchance robustness.
+To determine the presence of glasses, a threshold is manually chosen in this specific version, which is based on experiment results. The next goal is to develop an algorithm that can choose the threshold automatically in order to enchance robustness.
 
 Welcome to fork and try it on your own! :blush:
 
