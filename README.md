@@ -9,7 +9,7 @@
 * 15 Aug 2019: Add ROI_2 to the measurement regions to improve robustness
 
 ## Introduction
-This is an light-weight glasses detector written in Python for real-time videos. The algorithm is based on the method presented by the paper in [*Reference*](#Reference) with some modifications. Note that the goal is to determine the presence but not the precise location of glasses.
+This is a light-weight glasses detector written in Python for real-time videos. The algorithm is based on the method presented by the paper in [*Reference*](#Reference) with some modifications. Note that the goal is to determine the presence but not the precise location of glasses.
 
 ## Requirements
 * python 3.6 
