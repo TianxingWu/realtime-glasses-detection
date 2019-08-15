@@ -105,19 +105,31 @@ def judge_eyeglass(img):
     #计算特征长度
     d = len(thresh) * 0.5
     x = np.int32(d * 6/7)
-    y = np.int32(d * 1/2)
+    y = np.int32(d * 3/4)
     w = np.int32(d * 2/7)
-    h = np.int32(d * 3/4)
+    h = np.int32(d * 2/4)
+
+    x_2_1 = np.int32(d * 1/4)
+    x_2_2 = np.int32(d * 5/4)
+    w_2 = np.int32(d * 1/2)
+    y_2 = np.int32(d * 8/7)
+    h_2 = np.int32(d * 1/2)
     
-    roi = thresh[y:y+h, x:x+w] #提取ROI
+    roi_1 = thresh[y:y+h, x:x+w] #提取ROI
+    roi_2_1 = thresh[y_2:y_2+h_2, x_2_1:x_2_1+w_2]
+    roi_2_2 = thresh[y_2:y_2+h_2, x_2_2:x_2_2+w_2]
+    roi_2 = np.hstack([roi_2_1,roi_2_2])
     
-    measure = sum(sum(roi/255)) / (np.shape(roi)[0] * np.shape(roi)[1])#计算评价值
+    measure_1 = sum(sum(roi_1/255)) / (np.shape(roi_1)[0] * np.shape(roi_1)[1])#计算评价值
+    measure_2 = sum(sum(roi_2/255)) / (np.shape(roi_2)[0] * np.shape(roi_2)[1])#计算评价值
+    measure = measure_1*0.3 + measure_2*0.7
     
-    cv2.imshow('roi',roi)
+    cv2.imshow('roi_1',roi_1)
+    cv2.imshow('roi_2',roi_2)
     print(measure)
     
     #根据评价值和阈值的关系确定判别值
-    if measure > 0.11:#阈值可调，经测试在0.11左右
+    if measure > 0.15:#阈值可调，经测试在0.15左右
         judge = True
     else:
         judge = False
