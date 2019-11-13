@@ -12,8 +12,8 @@
 This is a light-weight glasses detector written in Python for real-time videos. The algorithm is based on the method presented by the paper in [*Reference*](#Reference) with some modifications. Note that the goal is to determine the presence but not the precise location of glasses.
 
 ## Requirements
-* python 3.6 
-- numpy 1.14.0
+* python 3.6
+- numpy 1.14
 * opencv-python 3.4.0
 - dlib 19.7.0
 
